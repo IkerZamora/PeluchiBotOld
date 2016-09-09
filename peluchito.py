@@ -17,7 +17,7 @@ sys.setdefaultencoding("utf-8") # This will prevent errors with special characte
 commands = { # command description used in the 'ayuda' command, keep this up to date
     'ayuda' : 'Obtener información acerca de los comandos',
 }
-LOG_DIR = ".log/"
+LOG_DIR = "log/"
 
 # Log every text message we receive
 def logger(messages):
