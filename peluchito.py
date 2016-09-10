@@ -9,6 +9,7 @@ import datetime
 import sys
 import os.path
 from secret import TOKEN
+from encounters import Encounter, EE, AE, GE
 
 # This will prevent errors with special characters
 reload(sys)
@@ -19,6 +20,11 @@ commands = {
     'ayuda': 'Obtener información acerca de los comandos',
 }
 LOG_DIR = "log/"
+
+# Next encounter dates
+next_ee_date = datetime.datetime(2017, 7, 21, 16, 0)
+next_ae_date = datetime.datetime(2016, 10, 6, 16, 0)
+next_ge_date = datetime.datetime(2016, 4, 14, 16, 0)
 
 
 # Log every text message we receive
@@ -58,6 +64,30 @@ def command_help(m):
 Pero no te preocupes, porque pronto volveré más fuerte que nunca. :)
     '''
     bot.send_message(cid, note, parse_mode="Markdown")
+
+
+# Displays remaining days for the next LAN party 
+@bot.message_handler(commands=['hype'])
+def command_hype(m):
+    cid = m.chat.id
+    param = ""
+    try:
+        param = m.text.split()[1].lower()
+    except IndexError:
+        bot.send_message(cid, "Se necesita un atributo. Uso: /hype ( AE | GE | AE )")
+        return
+    if param == 'ee':
+        encounter = Encounter(next_ee_date, EE, 25)
+    elif param == 'ge': 
+        encounter = Encounter(next_ge_date, GE, 10)
+    elif param == 'ae':
+        encounter = Encounter(next_ae_date, AE, 3)
+    else:
+        bot.send_message(cid, "No conozco esa encounter. Uso: /hype ( AE | GE | AE )")
+        return
+    days, hours, minutes, seconds = encounter.time_left()
+    text = "Tiempo restante para la %s%d:\n %d días, %d horas, %d minutos y %d segundos" % (encounter.acronym, encounter.edition, days, hours, minutes, seconds)
+    bot.send_message(cid, text)
 
 
 bot.polling()
