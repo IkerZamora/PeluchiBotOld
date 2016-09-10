@@ -20,9 +20,8 @@ commands = {
 }
 LOG_DIR = "log/"
 
+
 # Log every text message we receive
-
-
 def logger(messages):
     for m in messages:
         if m.content_type == 'text':
@@ -43,9 +42,8 @@ def logger(messages):
 bot = telebot.TeleBot(TOKEN)
 bot.set_update_listener(logger)
 
-# help page
 
-
+# Help page
 @bot.message_handler(commands=['ayuda'])
 def command_help(m):
     cid = m.chat.id
