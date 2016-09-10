@@ -18,6 +18,7 @@ sys.setdefaultencoding("utf-8")
 commands = {
     # command description used in the 'ayuda' command, keep these up to date
     'ayuda': 'Obtener información acerca de los comandos',
+    'hype': 'Tiempo restante para la próxima EE ó AE ó GE'
 }
 LOG_DIR = "log/"
 
