@@ -65,7 +65,7 @@ bot.set_update_listener(logger)
 def command_help(m):
     cid = m.chat.id
     help_text = "Lista de comandos disponibles: \n"
-    for key in commands:
+    for key in sorted(commands):
         # generate help text out of the commands dictionary defined at the top
         help_text += "/" + key + ": "
         help_text += commands[key] + "\n"
