@@ -63,11 +63,6 @@ def command_help(m):
         help_text += "/" + key + ": "
         help_text += commands[key] + "\n"
     bot.send_message(cid, help_text)  # send the generated help page
-    note = '''
-*NOTA:* La lista de comandos es tan corta porque estoy de vacaciones.
-Pero no te preocupes, porque pronto volveré más fuerte que nunca. :)
-    '''
-    bot.send_message(cid, note, parse_mode="Markdown")
 
 
 # Displays remaining days for the next LAN party
