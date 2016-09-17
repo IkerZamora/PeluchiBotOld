@@ -17,11 +17,18 @@ sys.setdefaultencoding("utf-8")
 
 commands = {
     # command description used in the 'ayuda' command, keep these up to date
+    'apastar': 'Manda a alguien a pastar',
     'ayuda': 'Obtener información acerca de los comandos',
+    'ayylmao': 'ayyy lmao',
+    'ban': 'Ban hammer!',
+    'drama': 'Drama :O',
     'fichas': 'Fichas, fichas!',
     'hype': 'Tiempo restante para la próxima EE ó AE ó GE',
+    'kappa': 'Kappa',
     'lag': 'Lag, lag everywhere',
-    'rip': 'RIP'
+    'rip': 'RIP',
+    'spam': 'Spam',
+    'thug': 'Thug life'
 }
 LOG_DIR = "log/"
 
@@ -94,6 +101,11 @@ def command_hype(m):
     bot.send_message(cid, text)
 
 
+################################################################
+#                        STICKERS                              #
+################################################################
+
+
 # Send RIP sticker
 @bot.message_handler(commands=['rip'])
 def command_rip(m):
@@ -115,6 +127,62 @@ def command_lag(m):
 def command_fichas(m):
     cid = m.chat.id
     with open('stickers/fichas.webp', 'rb') as sticker:
+        bot.send_sticker(cid, sticker)
+
+
+# Send apastar sticker
+@bot.message_handler(commands=['apastar'])
+def command_apastar(m):
+    cid = m.chat.id
+    with open('stickers/apastar.webp', 'rb') as sticker:
+        bot.send_sticker(cid, sticker)
+
+
+# Send ayylmao sticker
+@bot.message_handler(commands=['ayylmao'])
+def command_ayylmao(m):
+    cid = m.chat.id
+    with open('stickers/ayylmao.webp', 'rb') as sticker:
+        bot.send_sticker(cid, sticker)
+
+
+# Send ban sticker
+@bot.message_handler(commands=['ban'])
+def command_ban(m):
+    cid = m.chat.id
+    with open('stickers/ban.webp', 'rb') as sticker:
+        bot.send_sticker(cid, sticker)
+
+
+# Send drama sticker
+@bot.message_handler(commands=['drama'])
+def command_drama(m):
+    cid = m.chat.id
+    with open('stickers/drama.webp', 'rb') as sticker:
+        bot.send_sticker(cid, sticker)
+
+
+# Send kappa sticker
+@bot.message_handler(commands=['kappa'])
+def command_kappa(m):
+    cid = m.chat.id
+    with open('stickers/kappa.webp', 'rb') as sticker:
+        bot.send_sticker(cid, sticker)
+
+
+# Send spam sticker
+@bot.message_handler(commands=['spam'])
+def command_spam(m):
+    cid = m.chat.id
+    with open('stickers/spam.webp', 'rb') as sticker:
+        bot.send_sticker(cid, sticker)
+
+
+# Send thug sticker
+@bot.message_handler(commands=['thug'])
+def command_thug(m):
+    cid = m.chat.id
+    with open('stickers/thug.webp', 'rb') as sticker:
         bot.send_sticker(cid, sticker)
 
 
