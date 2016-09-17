@@ -96,4 +96,28 @@ def command_hype(m):
     bot.send_message(cid, text)
 
 
+# Send RIP sticker
+@bot.message_handler(commands=['rip'])
+def command_rip(m):
+    cid = m.chat.id
+    with open('stickers/rip.webp', 'rb') as sticker:
+        bot.send_sticker(cid, sticker)
+
+
+# Send lag sticker
+@bot.message_handler(commands=['lag'])
+def command_lag(m):
+    cid = m.chat.id
+    with open('stickers/lag.webp', 'rb') as sticker:
+        bot.send_sticker(cid, sticker)
+
+
+# Send fichas sticker
+@bot.message_handler(commands=['fichas'])
+def command_fichas(m):
+    cid = m.chat.id
+    with open('stickers/fichas.webp', 'rb') as sticker:
+        bot.send_sticker(cid, sticker)
+
+
 bot.polling()
