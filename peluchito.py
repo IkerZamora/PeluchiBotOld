@@ -32,11 +32,6 @@ commands = {
 }
 LOG_DIR = "log/"
 
-# Next encounter dates
-next_ee_date = datetime.datetime(2017, 7, 21, 16, 0)
-next_ae_date = datetime.datetime(2016, 10, 6, 16, 0)
-next_ge_date = datetime.datetime(2016, 4, 14, 16, 0)
-
 
 # Log every text message we receive
 def logger(messages):
@@ -84,11 +79,11 @@ def command_hype(m):
             cid, "Se necesita un atributo. Uso: /hype ( AE | GE | AE )")
         return
     if param == 'ee':
-        encounter = Encounter(next_ee_date, EE, 25)
+        encounter = Encounter(EE)
     elif param == 'ge':
-        encounter = Encounter(next_ge_date, GE, 10)
+        encounter = Encounter(GE)
     elif param == 'ae':
-        encounter = Encounter(next_ae_date, AE, 3)
+        encounter = Encounter(AE)
     else:
         bot.send_message(
             cid, "No conozco esa encounter. Uso: /hype ( AE | GE | AE )")
