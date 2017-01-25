@@ -89,8 +89,10 @@ def command_hype(m):
             cid, "No conozco esa encounter. Uso: /hype ( AE | GE | AE )")
         return
     days, hours, minutes, seconds = encounter.time_left()
-    text = "Tiempo restante para la %s%d:\n" % (
+    text = "Tiempo restante para la %s%d " % (
         encounter.acronym, encounter.edition)
+    text += "(%d-%d-%d):\n" % (
+        encounter.date.year, encounter.date.month, encounter.date.day)
     text += " %d días, %d horas, %d minutos y %d segundos" % (
         days, hours, minutes, seconds)
     bot.send_message(cid, text)
