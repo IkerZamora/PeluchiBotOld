@@ -76,7 +76,7 @@ def command_hype(m):
         param = m.text.split()[1].lower()
     except IndexError:
         bot.send_message(
-            cid, "Se necesita un atributo. Uso: /hype ( AE | GE | AE )")
+            cid, "Se necesita un atributo. Uso: /hype ( EE | GE | AE )")
         return
     if param == 'ee':
         encounter = Encounter(EE)
@@ -86,7 +86,7 @@ def command_hype(m):
         encounter = Encounter(AE)
     else:
         bot.send_message(
-            cid, "No conozco esa encounter. Uso: /hype ( AE | GE | AE )")
+            cid, "No conozco esa encounter. Uso: /hype ( EE | GE | AE )")
         return
     days, hours, minutes, seconds = encounter.time_left()
     text = "Tiempo restante para la %s%d " % (
