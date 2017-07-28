@@ -8,7 +8,7 @@ GE = 'GE'
 
 # Next encounter dates
 next_ee_date = datetime(2017, 7, 21, 16, 0)
-next_ae_date = datetime(2016, 10, 6, 16, 0)
+next_ae_date = datetime(2017, 10, 12, 16, 0)
 next_ge_date = datetime(2017, 3, 16, 16, 0)
 
 # First encounter years
